@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>YOUR NAME | Engineering Student Portfolio</title>
+<meta name="description" content="Portfolio and resume of YOUR NAME, engineering student.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@600;700&display=swap" rel="stylesheet">
+<style>
+:root{--bg:#0b1020;--surface:#131a2e;--text:#e8ecf8;--muted:#9aa6c4;--accent:#4f8cff;--accent2:#22d3ee;--border:#232c47;--radius:16px}
+@media (prefers-color-scheme:light){:root{--bg:#f5f7fc;--surface:#fff;--text:#12182b;--muted:#5a6685;--border:#dfe5f2}}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:Inter,system-ui,sans-serif;background:var(--bg);color:var(--text);line-height:1.65}
+h1,h2,h3{font-family:"Space Grotesk",Inter,sans-serif;line-height:1.2}
+a{color:inherit;text-decoration:none}
+.wrap{max-width:1080px;margin:auto;padding:0 22px}
+section{padding:84px 0}
+h2{font-size:2rem;margin-bottom:8px}
+h2::after{content:"";display:block;width:56px;height:4px;border-radius:4px;background:linear-gradient(90deg,var(--accent),var(--accent2));margin-top:10px}
+.sub{color:var(--muted);margin:14px 0 34px}
+nav{position:sticky;top:0;z-index:10;background:color-mix(in srgb,var(--bg) 85%,transparent);backdrop-filter:blur(10px);border-bottom:1px solid var(--border)}
+nav .wrap{display:flex;justify-content:space-between;align-items:center;height:62px}
+.logo{font-family:"Space Grotesk";font-weight:700;font-size:1.2rem}
+.logo span{color:var(--accent)}
+nav ul{display:flex;gap:22px;list-style:none;font-size:.92rem;color:var(--muted);flex-wrap:wrap}
+nav a:hover{color:var(--accent)}
+.hero{padding:96px 0 70px}
+.hero .wrap{display:grid;grid-template-columns:1.4fr 1fr;gap:44px;align-items:center}
+.tag{display:inline-block;padding:6px 14px;border:1px solid var(--border);border-radius:99px;color:var(--accent2);font-size:.82rem;margin-bottom:18px}
+.hero h1{font-size:clamp(2.2rem,5vw,3.5rem)}
+.hero h1 em{font-style:normal;background:linear-gradient(90deg,var(--accent),var(--accent2));-webkit-background-clip:text;background-clip:text;color:transparent}
+.hero p{color:var(--muted);margin:18px 0 28px;max-width:520px}
+.btn{display:inline-block;padding:12px 24px;border-radius:12px;font-weight:600;border:1px solid var(--border);cursor:pointer;font:inherit;font-weight:600;color:var(--text);background:var(--surface);transition:.2s}
+.btn.primary{background:linear-gradient(90deg,var(--accent),var(--accent2));color:#fff;border:0}
+.btn:hover{transform:translateY(-2px)}
+.photo{aspect-ratio:1;border-radius:28px;background:linear-gradient(135deg,var(--accent),var(--accent2));padding:5px;max-width:340px;margin:auto}
+.photo img,.photo div{width:100%;height:100%;border-radius:24px;object-fit:cover;background:var(--surface);display:grid;place-items:center;font:700 4rem "Space Grotesk"}
+.grid{display:grid;gap:20px}
+.g2{grid-template-columns:repeat(auto-fit,minmax(300px,1fr))}
+.g3{grid-template-columns:repeat(auto-fit,minmax(240px,1fr))}
+.card{background:var(--surface);border:1px solid var(--border);border-radius:var(--radius);padding:24px;transition:.2s}
+.card:hover{border-color:var(--accent)}
+.card h3{font-size:1.1rem;margin-bottom:6px}
+.card p,.card li{color:var(--muted);font-size:.95rem}
+.card ul{padding-left:18px}
+.details dt{font-size:.78rem;text-transform:uppercase;letter-spacing:.08em;color:var(--accent2);margin-top:14px}
+.details dd{font-weight:500}
+.timeline{border-left:2px solid var(--border);padding-left:22px;display:grid;gap:22px}
+.timeline .item{position:relative}
+.timeline .item::before{content:"";position:absolute;left:-29px;top:6px;width:12px;height:12px;border-radius:50%;background:var(--accent)}
+.when{font-size:.8rem;color:var(--accent2);font-weight:600}
+.chips{display:flex;flex-wrap:wrap;gap:10px}
+.chip{padding:8px 16px;border-radius:99px;background:var(--surface);border:1px solid var(--border);font-size:.9rem}
+.bar{margin-bottom:16px}
+.bar div:first-child{display:flex;justify-content:space-between;font-size:.9rem;margin-bottom:6px}
+.track{height:8px;border-radius:8px;background:var(--border);overflow:hidden}
+.fill{height:100%;border-radius:8px;background:linear-gradient(90deg,var(--accent),var(--accent2))}
+.app{background:linear-gradient(135deg,color-mix(in srgb,var(--accent) 18%,var(--surface)),var(--surface));border:1px solid var(--accent);border-radius:24px;padding:40px;display:grid;grid-template-columns:1.3fr 1fr;gap:34px;align-items:center}
+.app h3{font-size:1.8rem;margin:10px 0}
+.app p{color:var(--muted);margin-bottom:20px}
+.app ul{margin:0 0 22px 18px;color:var(--muted)}
+.mock{aspect-ratio:4/3;border-radius:18px;background:var(--bg);border:1px solid var(--border);display:grid;place-items:center;overflow:hidden;color:var(--muted);text-align:center;font-size:.9rem}
+.mock img{width:100%;height:100%;object-fit:cover}
+.gallery{grid-template-columns:repeat(auto-fill,minmax(210px,1fr))}
+.shot{aspect-ratio:1;border-radius:14px;overflow:hidden;border:1px solid var(--border);background:linear-gradient(135deg,var(--surface),var(--border))}
+.shot img{width:100%;height:100%;object-fit:cover;transition:.3s}
+.shot:hover img{transform:scale(1.06)}
+.social{display:flex;flex-wrap:wrap;gap:14px;margin-top:30px}
+.social a{display:flex;align-items:center;gap:10px;padding:14px 22px;border-radius:14px;background:var(--surface);border:1px solid var(--border);font-weight:600;transition:.2s}
+.social a:hover{border-color:var(--accent);transform:translateY(-3px)}
+.social svg{width:20px;height:20px;fill:currentColor}
+footer{border-top:1px solid var(--border);padding:28px 0;text-align:center;color:var(--muted);font-size:.9rem}
+@media(max-width:780px){.hero .wrap,.app{grid-template-columns:1fr}.photo{order:-1;max-width:240px}nav ul{display:none}section{padding:60px 0}.app{padding:26px}}
+@media print{nav,.hero .btn,#app,#gallery,#connect,footer,.noprint{display:none!important}body{background:#fff;color:#000}.card,.chip{background:#fff;border-color:#ccc}.card p,.card li,.sub{color:#333}section{padding:22px 0}}
+</style>
+</head>
+<body>
+
+<nav><div class="wrap">
+  <a class="logo" href="#home">YN<span>.</span></a>
+  <ul>
+    <li><a href="#about">About</a></li><li><a href="#education">Education</a></li><li><a href="#skills">Skills</a></li>
+    <li><a href="#projects">Projects</a></li><li><a href="#app">Skill Finder</a></li><li><a href="#resume">Resume</a></li>
+    <li><a href="#gallery">Gallery</a></li><li><a href="#connect">Connect</a></li>
+  </ul>
+</div></nav>
+
+<header class="hero" id="home"><div class="wrap">
+  <div>
+    <span class="tag">Available for internships and projects</span>
+    <h1>Hi, I’m <em>YOUR NAME</em><br>Engineering Student</h1>
+    <p>B.Tech student in YOUR BRANCH at YOUR COLLEGE. I build practical software and engineering projects, and I love learning new technologies.</p>
+    <a class="btn primary" href="#projects">View Projects</a>
+    <button class="btn" onclick="window.print()">Download Resume (PDF)</button>
+  </div>
+  <div class="photo"><img src="images/profile.jpg" alt="YOUR NAME" onerror="this.outerHTML='<div>YN</div>'"></div>
+</div></header>
+
+<section id="about"><div class="wrap">
+  <h2>About Me</h2>
+  <p class="sub">A short introduction and my personal details.</p>
+  <div class="grid g2">
+    <div class="card"><p>Write 3 to 4 lines here: who you are, your branch and year, what you enjoy building, and your career goal. Keep it honest, specific and confident.</p></div>
+    <div class="card"><dl class="details">
+      <dt>Full Name</dt><dd>YOUR FULL NAME</dd>
+      <dt>Location</dt><dd>Hyderabad, Telangana, India</dd>
+      <dt>Email</dt><dd>youremail@gmail.com</dd>
+      <dt>Phone</dt><dd>+91 XXXXX XXXXX</dd>
+      <dt>Languages</dt><dd>English, Telugu, Hindi</dd>
+    </dl></div>
+  </div>
+</div></section>
+
+<section id="education"><div class="wrap">
+  <h2>Education</h2>
+  <p class="sub">My academic journey.</p>
+  <div class="timeline">
+    <div class="item"><span class="when">2023 – 2027</span><h3>B.Tech in YOUR BRANCH</h3><p class="sub" style="margin:4px 0">YOUR COLLEGE NAME | CGPA: X.XX</p></div>
+    <div class="item"><span class="when">2021 – 2023</span><h3>Intermediate (MPC)</h3><p class="sub" style="margin:4px 0">YOUR COLLEGE | XX%</p></div>
+    <div class="item"><span class="when">2021</span><h3>Secondary School (SSC)</h3><p class="sub" style="margin:4px 0">YOUR SCHOOL | GPA: X.X</p></div>
+  </div>
+</div></section>
+
+<section id="skills"><div class="wrap">
+  <h2>Skills</h2>
+  <p class="sub">Technical and professional strengths.</p>
+  <div class="grid g2">
+    <div class="card">
+      <h3 style="margin-bottom:16px">Technical Proficiency</h3>
+      <div class="bar"><div><span>HTML and CSS</span><span>85%</span></div><div class="track"><div class="fill" style="width:85%"></div></div></div>
+      <div class="bar"><div><span>JavaScript</span><span>70%</span></div><div class="track"><div class="fill" style="width:70%"></div></div></div>
+      <div class="bar"><div><span>Python</span><span>75%</span></div><div class="track"><div class="fill" style="width:75%"></div></div></div>
+      <div class="bar"><div><span>Git and GitHub</span><span>80%</span></div><div class="track"><div class="fill" style="width:80%"></div></div></div>
+    </div>
+    <div class="card">
+      <h3 style="margin-bottom:16px">Tools and Soft Skills</h3>
+      <div class="chips">
+        <span class="chip">VS Code</span><span class="chip">Problem Solving</span><span class="chip">Teamwork</span>
+        <span class="chip">Communication</span><span class="chip">Time Management</span><span class="chip">MS Office</span>
+      </div>
+    </div>
+  </div>
+</div></section>
+
+<section id="projects"><div class="wrap">
+  <h2>Projects</h2>
+  <p class="sub">Selected academic and personal work.</p>
+  <div class="grid g3">
+    <div class="card"><h3>Project One</h3><p>One line on the problem, your solution and the tools used.</p><br><p><b>Tech:</b> HTML, CSS, JS</p></div>
+    <div class="card"><h3>Project Two</h3><p>One line on the problem, your solution and the tools used.</p><br><p><b>Tech:</b> Python</p></div>
+    <div class="card"><h3>Project Three</h3><p>One line on the problem, your solution and the tools used.</p><br><p><b>Tech:</b> Your stack</p></div>
+  </div>
+</div></section>
+
+<section id="app"><div class="wrap">
+  <h2>Featured App</h2>
+  <p class="sub">A product I designed and built myself.</p>
+  <div class="app">
+    <div>
+      <span class="tag">My Own Creation</span>
+      <h3>Skill Finder</h3>
+      <p>Describe what Skill Finder does and who it helps, in two lines.</p>
+      <ul><li>Key feature one</li><li>Key feature two</li><li>Key feature three</li></ul>
+      <a class="btn primary" href="YOUR_SKILL_FINDER_LINK" target="_blank" rel="noopener">Open Skill Finder</a>
+      <a class="btn" href="YOUR_SKILL_FINDER_GITHUB_LINK" target="_blank" rel="noopener">View Code</a>
+    </div>
+    <div class="mock"><img src="images/skillfinder.png" alt="Skill Finder screenshot" onerror="this.outerHTML='<span>Add images/skillfinder.png</span>'"></div>
+  </div>
+</div></section>
+
+<section id="resume"><div class="wrap">
+  <h2>Resume</h2>
+  <p class="sub">Certifications, achievements and experience. Click “Download Resume (PDF)” at the top and choose Save as PDF.</p>
+  <div class="grid g2">
+    <div class="card"><h3>Certifications</h3><ul><li>Certification name, Issuer, Year</li><li>Certification name, Issuer, Year</li></ul></div>
+    <div class="card"><h3>Achievements and Activities</h3><ul><li>Hackathon, club or event, Year</li><li>Achievement or leadership role</li></ul></div>
+    <div class="card"><h3>Internships and Experience</h3><ul><li>Role, Company, Duration</li></ul></div>
+    <div class="card"><h3>Career Objective</h3><p>A motivated engineering student seeking an opportunity to apply technical skills and grow as a professional.</p></div>
+  </div>
+</div></section>
+
+<section id="gallery"><div class="wrap">
+  <h2>Gallery</h2>
+  <p class="sub">Moments, events and work.</p>
+  <div class="grid gallery">
+    <div class="shot"><img src="images/g1.jpg" alt="Gallery 1" onerror="this.remove()"></div>
+    <div class="shot"><img src="images/g2.jpg" alt="Gallery 2" onerror="this.remove()"></div>
+    <div class="shot"><img src="images/g3.jpg" alt="Gallery 3" onerror="this.remove()"></div>
+    <div class="shot"><img src="images/g4.jpg" alt="Gallery 4" onerror="this.remove()"></div>
+  </div>
+</div></section>
+
+<section id="connect"><div class="wrap">
+  <h2>Connect With Me</h2>
+  <p class="sub">Find me on other platforms.</p>
+  <div class="social">
+    <a href="https://wa.me/91XXXXXXXXXX" target="_blank" rel="noopener"><svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2Zm5.8 14.2c-.2.7-1.4 1.3-2 1.3-.5.1-1.2.1-1.9-.1-.4-.1-1-.3-1.7-.6-3-1.3-5-4.3-5.1-4.5-.1-.2-1.2-1.600-1.200-3s.8-2.100 1-2.400c.3-.3.600-.3.800-.3h.600c.2 0 .4 0 .6.500l.8 2c.1.200.1.400 0 .5l-.3.500-.4.400c-.1.200-.3.300-.1.600.2.300.8 1.300 1.700 2.100 1.100 1 2.100 1.300 2.400 1.500.3.100.5.100.6-.1l.9-1.100c.2-.3.400-.2.600-.1l1.900.9c.3.100.5.200.5.300.1.100.1.700-.1 1.400Z"/></svg>WhatsApp</a>
+    <a href="https://instagram.com/YOUR_USERNAME" target="_blank" rel="noopener"><svg viewBox="0 0 24 24"><path d="M7 2h10a5 5 0 0 1 5 5v10a5 5 0 0 1-5 5H7a5 5 0 0 1-5-5V7a5 5 0 0 1 5-5Zm0 2a3 3 0 0 0-3 3v10a3 3 0 0 0 3 3h10a3 3 0 0 0 3-3V7a3 3 0 0 0-3-3H7Zm5 3.500A4.500 4.500 0 1 1 7.500 12 4.500 4.500 0 0 1 12 7.500Zm0 2A2.500 2.500 0 1 0 14.500 12 2.500 2.500 0 0 0 12 9.500Zm5-3.700a1 1 0 1 1-1 1 1 1 0 0 1 1-1Z"/></svg>Instagram</a>
+    <a href="https://github.com/YOUR_GITHUB_USERNAME" target="_blank" rel="noopener"><svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 0 0-3.200 19.500c.5.100.7-.2.700-.5v-1.800c-2.800.6-3.400-1.200-3.400-1.200-.5-1.200-1.100-1.500-1.100-1.500-.9-.6.100-.6.100-.6 1 .1 1.500 1 1.500 1 .9 1.500 2.300 1.100 2.900.8.1-.7.400-1.100.6-1.400-2.200-.3-4.600-1.100-4.600-5 0-1.100.4-2 1-2.700-.1-.3-.4-1.300.1-2.700 0 0 .8-.3 2.700 1a9.400 9.400 0 0 1 5 0c1.900-1.300 2.700-1 2.700-1 .5 1.400.2 2.400.1 2.700.6.700 1 1.600 1 2.700 0 3.900-2.300 4.700-4.600 5 .4.300.7.900.7 1.800v2.700c0 .3.200.6.700.5A10 10 0 0 0 12 2Z"/></svg>GitHub</a>
+    <a href="https://linkedin.com/in/YOUR_LINKEDIN" target="_blank" rel="noopener"><svg viewBox="0 0 24 24"><path d="M4.500 3A2.500 2.500 0 1 1 4.500 8a2.500 2.500 0 0 1 0-5ZM2 9.500h5V22H2V9.500Zm7.500 0h4.800v1.700c.7-1.200 2.200-2 4-2 3.500 0 4.200 2.300 4.200 5.300V22h-5v-6.500c0-1.500 0-3.300-2-3.300s-2.300 1.600-2.300 3.200V22h-5V9.500Z"/></svg>LinkedIn</a>
+    <a href="mailto:youremail@gmail.com"><svg viewBox="0 0 24 24"><path d="M3 5h18a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V6a1 1 0 0 1 1-1Zm9 7.500L4.500 7h15L12 12.500ZM4 9l8 5.500L20 9v8H4V9Z"/></svg>Email</a>
+  </div>
+</div></section>
+
+<footer>© <span id="y"></span> YOUR NAME. All rights reserved.</footer>
+<script>document.getElementById("y").textContent=new Date().getFullYear()</script>
+</body>
+</html>
